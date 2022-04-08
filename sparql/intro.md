@@ -171,7 +171,7 @@ Now, let's try to figure out together how we might deal with a situation where C
 
 ## Conclusion
 
-In this lab we have learned the basics of working with Stardog and SPARQL. To continue your journey, venture to explore one of the following notebooks:
+In this lab we have learned the basics of working with Stardog and SPARQL. To continue your journey, venture to explore one of the following tutorials:
 
 Intro to working with DotNet and Stardog
 
