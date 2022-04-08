@@ -1,0 +1,68 @@
+
+
+# How old is Mary?
+# How old is Cade?
+SELECT ?person ?age
+WHERE {
+  ?person :ageIs ?age .
+}
+
+
+# Who is married to Mary?
+# Who is married to Cade?
+SELECT ?spouse1
+WHERE {
+  ?spouse1 :marriedTo ?spouse2 .
+  FILTER( ?spouse2 = :Mary || ?spouse2 = :Cade)
+}
+
+
+# Who is interested in hiking and biology?
+SELECT ?person
+WHERE {
+  ?person :interestIs :Hiking, :Biology .
+}
+
+
+# Who is married to someone who is interested in chocolate?
+SELECT ?who
+WHERE {
+  ?who :marriedTo ?spouse .
+  ?spouse :interestIs :Chocolate .
+}
+
+
+# Who is married to someone who's favorite food is Pizza?
+SELECT ?who
+WHERE {
+  ?who :marriedTo ?spouse .
+  ?spouse :favoriteFoodIs :Pizza .
+}
+
+
+# Who is kind?
+SELECT ?who
+WHERE {
+  ?who rdf:type :Kind .
+}
+
+
+# Who is a kind person?
+SELECT ?who
+WHERE {
+  ?who rdf:type :Kind, :Person .
+}
+
+
+# Who is a kind student?
+SELECT ?who
+WHERE {
+  ?who rdf:type :Kind, :Student .
+}
+
+
+# Who lives in Paris?
+SELECT ?who
+WHERE {
+  ?who :livesIn :Paris .
+}

@@ -1,0 +1,65 @@
+# Add data to the store
+
+INSERT DATA {
+  # Cade is an American
+  :American rdf:type rdfs:Class .
+  :Cade rdf:type :American .
+
+  # Cade is 27
+  :ageIs rdf:type rdf:Property .
+  :Cade :ageIs "27" .
+  
+  # Cade's favorite foods are Pizza and Burgers
+  :favoriteFoodIs rdf:type rdf:Property .
+  :Cade :favoriteFoodIs :Pizza, :Burger .
+  
+  # The capital of France is Paris
+  :capitalIs rdf:type rdf:Property .
+  :France :capitalIs :Paris .
+
+  # Cade is 27 years old
+  # 26 years is the age of Mary
+  :ageIs rdf:type rdf:Property .
+  :Cade :ageIs "27"^^xsd:integer .
+  :Mary :ageIs "26"^^xsd:integer .
+
+  # Mary's interests include hiking, chocolate, and biology
+  :interestIs rdf:type rdf:Property .
+  :Mary :interestIs 
+    :Hiking ,
+    :Chocolate ,
+    :Biology .
+
+  # Mary is a student
+  :Student rdf:type rdfs:Class .
+  :Mary rdf:type :Student .
+
+  # Paris is a City in France
+  :City rdf:type rdfs:Class .
+  :capitalIs rdfs:range :City .
+
+  # Cade and Mary are kind people
+  :Person rdf:type rdfs:Class .
+  :Kind rdf:type rdfs:Class .
+
+  :Cade rdf:type :Kind, :Person .
+  :Mary rdf:type :Kind, :Person .
+  
+  # Cade is married to Mary
+  :marriedTo 
+    rdf:type owl:SymmetricProperty .
+  :marriedTo 
+    rdfs:domain :Person ;
+    rdfs:range :Person .
+  :Cade 
+    :marriedTo :Mary .
+  
+  # Mary lives in Paris
+  :livesIn rdf:type owl:TransitiveProperty .
+  :Mary :livesIn :Paris .
+  
+  # Cade lives with Mary
+  :livesWith rdfs:subPropertyOf :livesIn .
+  :livesWith rdf:type owl:TransitiveProperty .
+  :Cade :livesWith :Mary .
+}

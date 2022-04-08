@@ -1,0 +1,11 @@
+services:
+  studio:
+    image: stardog/stardog-studio:current
+    ports:
+      - 8085:8080
+  store:
+    image: stardog/stardog:latest
+    ports:
+      - 5820:5820
+    volumes:
+      - C:\Stardog:/var/opt/stardog
